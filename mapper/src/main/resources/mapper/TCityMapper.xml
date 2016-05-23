@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.github.demo.mapper.TCityMapper" >
+  <resultMap id="BaseResultMap" type="com.github.demo.model.TCity" >
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="countryId" property="countryId" jdbcType="INTEGER" />
+    <result column="provinceId" property="provinceId" jdbcType="INTEGER" />
+    <result column="cityId" property="cityId" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="longitude" property="longitude" jdbcType="REAL" />
+    <result column="latitude" property="latitude" jdbcType="REAL" />
+    <result column="updateTime" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="chsCode" property="chsCode" jdbcType="VARCHAR" />
+  </resultMap>
+</mapper>

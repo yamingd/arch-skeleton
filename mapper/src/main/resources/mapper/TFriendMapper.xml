@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.github.demo.mapper.TFriendMapper" >
+  <resultMap id="BaseResultMap" type="com.github.demo.model.TFriend" >
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="userId" property="userId" jdbcType="INTEGER" />
+    <result column="friendId" property="friendId" jdbcType="INTEGER" />
+    <result column="addTime" property="addTime" jdbcType="INTEGER" />
+    <result column="userFrom" property="userFrom" jdbcType="SMALLINT" />
+    <result column="friendFrom" property="friendFrom" jdbcType="SMALLINT" />
+  </resultMap>
+</mapper>

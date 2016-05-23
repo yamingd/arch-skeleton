@@ -1,0 +1,21 @@
+group 'com.github.yaming.arch-skeleton'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'maven'
+apply plugin: 'java'
+
+dependencies {
+    compile project(':model')
+    compile project(':mapper')
+    compile project(':service')
+    compile project(':service-impl')
+    compile project(':common')
+    compile project(':integration')
+    compile project(':dubbo-consumer')
+    compile project(':dubbo-provider')
+    compile files('../lib/dubbo-2.8.4.jar')
+
+    compile 'junit:junit:4.12'
+    compile 'org.javassist:javassist:3.20.0-GA'
+    compile 'org.springframework:spring-test:3.2.12.RELEASE'
+}

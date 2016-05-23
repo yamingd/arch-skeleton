@@ -1,0 +1,13 @@
+rootProject.name = 'arch-skeleton'
+include 'web-home'
+include 'model'
+include 'service'
+include 'service-impl'
+include 'common'
+include 'integration'
+include 'dubbo-provider'
+include 'dubbo-consumer'
+include 'dev-tools'
+include 'mapper'
+include 'testcases'
+

@@ -1,0 +1,35 @@
+group 'com.github.yaming.arch-skeleton'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'maven'
+apply plugin: 'java'
+apply plugin: 'org.akhikhl.gretty'
+
+dependencies {
+    compile project(':service')
+    compile project(':service-impl')
+    compile project(':dubbo-consumer')
+    compile project(':dubbo-provider')
+    compile 'com.github.yamingd.argo:argo-freemarker:2.1'
+    compile 'com.alibaba:fastjson:1.2.8'
+    compile('org.springframework:spring-context:3.2.11.RELEASE') {
+        exclude(module: 'commons-logging')
+    }
+    compile 'org.springframework:spring-web:3.2.11.RELEASE'
+    compile 'org.springframework:spring-webmvc:3.2.11.RELEASE'
+    compile 'org.hibernate:hibernate-validator:4.3.1.Final'
+    compile('javax.servlet:javax.servlet-api:3.1.0') {
+    }
+}
+
+
+gretty {
+    // overlay ':web-res'
+    httpPort = 8280
+    contextPath = "/"
+    servletContainer = 'jetty9'
+    // extraResourceBase '../web-assets/src/main/webapp'
+
+    debugPort = 5005
+    debugSuspend = false
+}

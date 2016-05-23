@@ -1,0 +1,16 @@
+group 'com.github.yaming.arch-skeleton'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'maven'
+apply plugin: 'java'
+
+
+dependencies {
+    compile project(':model')
+    compile project(':common')
+
+    compile 'org.mybatis:mybatis:3.3.1'
+    compile 'org.mybatis:mybatis-spring:1.2.5'
+
+    compile 'tk.mybatis:mapper:3.3.8'
+}

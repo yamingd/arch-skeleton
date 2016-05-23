@@ -1,0 +1,18 @@
+group 'com.github.yaming.arch-skeleton'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'maven'
+apply plugin: 'java'
+
+
+dependencies {
+    compile project(':model')
+    compile project(':common')
+    compile project(':mapper')
+
+    compile 'org.springframework:spring-jdbc:3.2.12.RELEASE'
+    compile 'org.springframework:spring-tx:3.2.12.RELEASE'
+    compile('org.springframework:spring-context:3.2.11.RELEASE') {
+        exclude(module: 'commons-logging')
+    }
+}

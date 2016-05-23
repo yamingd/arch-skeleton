@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.github.demo.mapper.TDeviceMapper" >
+  <resultMap id="BaseResultMap" type="com.github.demo.model.TDevice" >
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="addUserId" property="addUserId" jdbcType="INTEGER" />
+    <result column="deviceId" property="deviceId" jdbcType="VARCHAR" />
+    <result column="deviceToken" property="deviceToken" jdbcType="VARCHAR" />
+    <result column="kindId" property="kindId" jdbcType="SMALLINT" />
+  </resultMap>
+</mapper>

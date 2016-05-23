@@ -1,0 +1,16 @@
+group 'com.github.yaming.arch-skeleton'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'maven'
+apply plugin: 'java'
+
+dependencies {
+    compile project(':model')
+    compile files('../lib/dubbo-2.8.4.jar')
+    compile ('org.apache.zookeeper:zookeeper:3.4.8'){
+        exclude(module: 'log4j')
+        exclude(module: 'slf4j-log4j12')
+    }
+    compile 'com.101tec:zkclient:0.8'
+    compile 'io.netty:netty-all:4.0.34.Final'
+}
