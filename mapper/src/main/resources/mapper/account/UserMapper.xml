@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.demo.mapper.account.UserMapper">
+  <resultMap id="BaseResultMap" type="com.github.demo.model.account.User">
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="real_name" jdbcType="VARCHAR" property="real_name" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nick_name" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="hash_passwd" jdbcType="VARCHAR" property="hash_passwd" />
+    <result column="wx_id" jdbcType="VARCHAR" property="wx_id" />
+    <result column="wx_token" jdbcType="VARCHAR" property="wx_token" />
+    <result column="qq_id" jdbcType="VARCHAR" property="qq_id" />
+    <result column="qq_token" jdbcType="VARCHAR" property="qq_token" />
+    <result column="weibo_id" jdbcType="VARCHAR" property="weibo_id" />
+    <result column="weibo_token" jdbcType="VARCHAR" property="weibo_token" />
+    <result column="icon_id" jdbcType="INTEGER" property="icon_id" />
+    <result column="icon_path" jdbcType="VARCHAR" property="icon_path" />
+    <result column="gender_id" jdbcType="SMALLINT" property="gender_id" />
+    <result column="birthdate" jdbcType="DATE" property="birthdate" />
+    <result column="province_id" jdbcType="INTEGER" property="province_id" />
+    <result column="city_id" jdbcType="INTEGER" property="city_id" />
+    <result column="district_id" jdbcType="INTEGER" property="district_id" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="create_date" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="update_time" />
+    <result column="total_login" jdbcType="INTEGER" property="total_login" />
+    <result column="vip_level" jdbcType="SMALLINT" property="vip_level" />
+    <result column="total_credit" jdbcType="INTEGER" property="total_credit" />
+    <result column="status_id" jdbcType="SMALLINT" property="status_id" />
+    <result column="total_unread_msg" jdbcType="INTEGER" property="total_unread_msg" />
+    <result column="idcard_no" jdbcType="VARCHAR" property="idcard_no" />
+    <result column="idcard_type_id" jdbcType="INTEGER" property="idcard_type_id" />
+    <result column="idcard_image_id1" jdbcType="INTEGER" property="idcard_image_id1" />
+    <result column="idcard_image_id2" jdbcType="INTEGER" property="idcard_image_id2" />
+    <result column="approve_time" jdbcType="TIMESTAMP" property="approve_time" />
+    <result column="approve_mark" jdbcType="VARCHAR" property="approve_mark" />
+    <result column="latitude" jdbcType="DECIMAL" property="latitude" />
+    <result column="longitude" jdbcType="DECIMAL" property="longitude" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="sign_from" jdbcType="SMALLINT" property="sign_from" />
+    <result column="device_id" jdbcType="INTEGER" property="device_id" />
+    <result column="last_device_id" jdbcType="INTEGER" property="last_device_id" />
+    <result column="last_from" jdbcType="SMALLINT" property="last_from" />
+    <result column="total_score" jdbcType="INTEGER" property="total_score" />
+  </resultMap>
+</mapper>

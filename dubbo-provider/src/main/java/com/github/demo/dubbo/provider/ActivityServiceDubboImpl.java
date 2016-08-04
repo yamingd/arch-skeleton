@@ -24,6 +24,11 @@ public class ActivityServiceDubboImpl implements ActivityService, InitializingBe
     private ActivityService activityService;
 
     @Override
+    public TActivity find(Integer activityId) {
+        return activityService.find(activityId);
+    }
+
+    @Override
     public List<TActivity> findAll() {
         return activityService.findAll();
     }
@@ -31,6 +36,21 @@ public class ActivityServiceDubboImpl implements ActivityService, InitializingBe
     @Override
     public TActivity add(TActivity activity) {
         return activityService.add(activity);
+    }
+
+    @Override
+    public TActivity save(TActivity activity) {
+        return null;
+    }
+
+    @Override
+    public TActivity remove(Integer activityId) {
+        return null;
+    }
+
+    @Override
+    public TActivity remove(TActivity activity) {
+        return null;
     }
 
     @Override

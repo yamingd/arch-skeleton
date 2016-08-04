@@ -18,4 +18,5 @@ dependencies {
     compile 'junit:junit:4.12'
     compile 'org.javassist:javassist:3.20.0-GA'
     compile 'org.springframework:spring-test:3.2.12.RELEASE'
+    compile 'commons-daemon:commons-daemon:1.0.15'
 }

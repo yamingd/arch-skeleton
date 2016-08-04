@@ -36,6 +36,39 @@ public class ActivityServiceImplTest extends SimpleTestCaseBase {
 
     }
 
+    @Test
+    public void test_findAll00() throws Exception {
+
+        int max = 50000;
+        long start = System.currentTimeMillis();
+
+        List<TActivity> list = activityService.findAll();
+        logger.info("list: {}", list);
+
+        long end = System.currentTimeMillis();
+        long elapsedMilliseconds = end - start;
+
+        logger.warn(String.format("%d次RPC调用(kryo协议),共耗时%d毫秒,平均%f/秒", max, elapsedMilliseconds, max / (elapsedMilliseconds / 1000.0F)));
+
+    }
+
+    @Test
+    public void test_find() throws Exception {
+
+        int max = 50000;
+        long start = System.currentTimeMillis();
+
+        for (int i = 0; i < max; i++) {
+            TActivity list = activityService.find(1);
+            logger.info("list: {}", list);
+        }
+
+        long end = System.currentTimeMillis();
+        long elapsedMilliseconds = end - start;
+
+        logger.warn(String.format("%d次RPC调用(kryo协议),共耗时%d毫秒,平均%f/秒", max, elapsedMilliseconds, max / (elapsedMilliseconds / 1000.0F)));
+
+    }
 
     @Test
     public void test_create() throws Exception {

@@ -10,7 +10,7 @@ buildscript {
     repositories {
         mavenLocal()
 
-        maven { url 'http://maven.oschina.net/content/groups/public/' }
+        //maven { url 'http://maven.oschina.net/content/groups/public/' }
 
         mavenCentral()
     }
@@ -44,7 +44,7 @@ subprojects {
 
         mavenLocal()
 
-        //maven { url 'http://maven.oschina.net/content/groups/public/' }
+       // maven { url 'http://maven.oschina.net/content/groups/public/' }
         maven { url 'https://oss.sonatype.org/content/groups/public/' }
 
         mavenCentral()
@@ -78,8 +78,9 @@ subprojects {
 
         compile 'javax.inject:javax.inject:1'
 
-        compile 'com.esotericsoftware:kryo:3.0.3'
-        compile 'de.javakaffee:kryo-serializers:0.37'
+        compile 'com.esotericsoftware:kryo:4.0.0'
+        compile 'com.esotericsoftware:kryo-shaded:4.0.0'
+        compile 'de.javakaffee:kryo-serializers:0.38'
 
 
         compile('org.slf4j:slf4j-api:1.7.5') {

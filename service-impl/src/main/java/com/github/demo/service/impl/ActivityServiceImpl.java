@@ -1,17 +1,15 @@
 package com.github.demo.service.impl;
 
-import com.github.demo.mapper.TActivityMapper;
 import com.github.demo.model.TActivity;
 import com.github.demo.service.ActivityService;
+import com.google.common.base.Preconditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Random;
 
 /**
  * Created by dengyaming on 16/4/27.
@@ -25,16 +23,25 @@ public class ActivityServiceImpl extends BaseServiceImpl implements ActivityServ
     TActivityMapper activityMapper;
 
     @Override
+    public TActivity find(Integer activityId) {
+        activityMapper.selectByExample()
+        return activityMapper.selectByPrimaryKey(activityId);
+    }
+
+    @Override
     public List<TActivity> findAll() {
-        List<TActivity> list = new ArrayList<>();
-        Random random = new Random();
-        int max = random.nextInt(100);
-        for (int i=0; i<max; i++) {
-            TActivity activity = new TActivity();
-            activity.setId(i);
-            list.add(activity);
-        }
-        return list;
+//        List<TActivity> list = new ArrayList<>();
+//        Random random = new Random();
+//        int max = random.nextInt(100);
+//        for (int i=0; i<max; i++) {
+//            TActivity activity = new TActivity();
+//            activity.setId(i);
+//            list.add(activity);
+//        }
+//        return list;
+
+        List<TActivity> activityList = activityMapper.selectAll();
+        return activityList;
     }
 
     @Override
@@ -64,11 +71,40 @@ public class ActivityServiceImpl extends BaseServiceImpl implements ActivityServ
         activity.setTotalSign(0);
         activity.setTotalView(0);
         activity.setTotalWant(0);
+        activityMapper.insertSelective()
         int id = activityMapper.insert(activity);
         activity.setId(id);
         long end = System.currentTimeMillis() - start;
         logger.info("create 1: {}, {}ms", activity, end);
         return activity;
+    }
+
+    @Override
+    public TActivity save(TActivity activity) {
+        Preconditions.checkNotNull(activity, "activity is NULL");
+        activityMapper.updateByPrimaryKey(activity);
+        return activity;
+    }
+
+    @Override
+    public TActivity saveNotNull(TActivity activity) {
+        activityMapper.updateByPrimaryKeySelective(activity);
+        return activity;
+    }
+
+    @Override
+    public TActivity remove(Integer activityId) {
+        activityMapper.deleteByPrimaryKey(activityId);
+        return null;
+    }
+
+    @Override
+    public TActivity remove(TActivity activity) {
+        if (null == activity){
+            return activity;
+        }
+        activityMapper.delete(activity);
+        return null;
     }
 
     @Override

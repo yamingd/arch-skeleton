@@ -42,6 +42,9 @@
     <logger name="org.quartz">
         <level value="ERROR" />
     </logger>
+    <logger name="org.quartz">
+        <level value="ERROR" />
+    </logger>
     <root>
         <level value="DEBUG" />
         <appender-ref ref="stdout" />

@@ -7,12 +7,19 @@
     <!-- http://blog.csdn.net/z69183787/article/details/50472069 -->
     <context id="mysqlTables" targetRuntime="MyBatis3Simple" defaultModelType="flat">
 
-        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
-            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+        <plugin type="com.github.yamingd.mybatis.FlexMapperPlugin">
+            <property name="mappers" value="com.github.demo.mapper.AllMapper"/>
             <!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true -->
             <property name="caseSensitive" value="true"/>
         </plugin>
+        
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin">
+            <property name="useEqualsHashCodeFromRoot" value="true" />
+        </plugin>
 
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin">
+            <property name="useToStringFromRoot" value="true" />
+        </plugin>
 
         <commentGenerator>
              <property name="suppressDate" value="true"/>
@@ -29,20 +36,25 @@
             <property name="forceBigDecimals" value="false" />
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.github.demo.model" targetProject="../model/src/main/java">
+        <javaModelGenerator targetPackage="com.github.demo.model.account" targetProject="../model/src/main/java">
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="resources/mapper"  targetProject="../mapper/src/main">
+        <sqlMapGenerator targetPackage="resources/mapper/account"  targetProject="../mapper/src/main">
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.github.demo.mapper"  targetProject="../mapper/src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.github.demo.mapper.account"  targetProject="../mapper/src/main/java">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 
-        <table tableName="%">
+        <table tableName="t_activity" domainObjectName="Activity">
+            <property name="useActualColumnNames" value="true"/>
+            <generatedKey column="id" sqlStatement="Mysql" identity="true" />
+        </table>
+
+        <table tableName="t_user" domainObjectName="User">
             <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="Mysql" identity="true" />
         </table>

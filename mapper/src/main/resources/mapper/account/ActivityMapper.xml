@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.demo.mapper.account.ActivityMapper">
+  <resultMap id="BaseResultMap" type="com.github.demo.model.account.Activity">
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="chs_code" jdbcType="VARCHAR" property="chs_code" />
+    <result column="bar_id" jdbcType="INTEGER" property="bar_id" />
+    <result column="province_id" jdbcType="INTEGER" property="province_id" />
+    <result column="city_id" jdbcType="INTEGER" property="city_id" />
+    <result column="district_id" jdbcType="INTEGER" property="district_id" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="start_time" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="end_time" />
+    <result column="create_user_id" jdbcType="INTEGER" property="create_user_id" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="create_time" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="update_time" />
+    <result column="status_id" jdbcType="SMALLINT" property="status_id" />
+    <result column="cover_image_id" jdbcType="INTEGER" property="cover_image_id" />
+    <result column="category_id" jdbcType="INTEGER" property="category_id" />
+    <result column="sign_end_time" jdbcType="TIMESTAMP" property="sign_end_time" />
+    <result column="contact_phone" jdbcType="VARCHAR" property="contact_phone" />
+    <result column="contact_name" jdbcType="VARCHAR" property="contact_name" />
+    <result column="if_recommend" jdbcType="BIT" property="if_recommend" />
+    <result column="if_top" jdbcType="BIT" property="if_top" />
+    <result column="if_new" jdbcType="BIT" property="if_new" />
+    <result column="total_sign" jdbcType="INTEGER" property="total_sign" />
+    <result column="total_want" jdbcType="INTEGER" property="total_want" />
+    <result column="total_view" jdbcType="INTEGER" property="total_view" />
+    <result column="total_share" jdbcType="INTEGER" property="total_share" />
+    <result column="total_attended" jdbcType="INTEGER" property="total_attended" />
+    <result column="latitude" jdbcType="DECIMAL" property="latitude" />
+    <result column="longitude" jdbcType="DECIMAL" property="longitude" />
+    <result column="create_from" jdbcType="SMALLINT" property="create_from" />
+    <result column="detail" jdbcType="LONGVARCHAR" property="detail" />
+  </resultMap>
+</mapper>
