@@ -33,9 +33,24 @@ def getDbProperties = {
 
 }
 
+task ensureIfDevToolsJarNotExist {
+    if (!file('../lib/dev-tools-1.0.jar').exists()) {
+        delete ('build/libs/dev-tools-1.0-SNAPSHOT.jar')
+    }
+}
 
-task mybatisGenerate << {
+jar.doLast {
+    copy {
+        from('build/libs') {
+            include 'dev-tools-1.0-SNAPSHOT.jar'
+        }
+        into '../lib'
+        rename 'dev-tools-1.0-SNAPSHOT.jar','dev-tools-1.0.jar'
+    }
+    println(':dev-tools jar was copied to /lib/dev-tools-1.0.jar')
+}
 
+task mybatisGenerate(dependsOn: [':dev-tools:ensureIfDevToolsJarNotExist',':dev-tools:jar']) << {
 
     def properties = getDbProperties()
 
